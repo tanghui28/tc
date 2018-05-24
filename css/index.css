@@ -280,9 +280,9 @@ body{min-width: 1200px; margin-left: auto; margin-right: auto;}
 .main_bussis_nav{position: absolute; top: 56px; left: 0; width: 248px; padding-left: 36px;}
 .main_bussis_nav a{display: block; line-height: 16px; margin-bottom: 34px; color: #6d6d6d; position: relative;}
 .main_bussis_nav.active{position: fixed; top: 130px;  left: 50%; margin-left: -600px;}
-.main_bussis_nav a span{width: 9px; height: 9px; opacity: 0; transition:all 0.4s; -webkit-transition:all 0.4s; display: none\9; background: #c3251c; border-radius: 50%; display: block; position: absolute; right: -5px; top: 0; bottom: 0; margin: auto;}
+.main_bussis_nav a span{width: 9px; height: 9px; opacity: 0; transition:all 0.4s; -webkit-transition:all 0.4s; display: none\9; background: #019040; border-radius: 50%; display: block; position: absolute; right: -5px; top: 0; bottom: 0; margin: auto;}
 .main_bussis_nav a.active span{opacity: 1; display: block\9;}
-.main_bussis_nav a.active{color: #c3251c;}
+.main_bussis_nav a.active{color: #019040;}
 
 
 
