@@ -7,6 +7,8 @@
 
     <meta name="description" content="成都拓创医药有限公司创立于2011年，注册资本1000万元，是一家批发及销售一、二类医疗器械、化工产品（不含危险品）、消毒用品、生化药品、中药饮片、生物制品（不含预防性生物制品）、中成药、华学药制剂、抗生素制剂、预包装食品兼散装食品为一体的企业。">
     <meta name="keyword" content="成都拓创医药有限公司">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
     <link rel="shortcut icon" href="./images/logo2.ico">
     <title>成都拓创医药有限公司</title>
     <link rel="stylesheet" type="text/css" href="./css/animate.min.css">
@@ -14,28 +16,31 @@
     <link rel="stylesheet" type="text/css" href="./css/public.css">
     <link type="text/css" rel="stylesheet" href="./css/index.css">
     <link rel="stylesheet" href="./css/share_style0_16.css">
+    <style>
+        .front,.back{
+            position:absolute;
+            backface-visibility: hidden;
+            transition: all linear .5s;
+        }
+        .front{
+            transform: rotateX(0deg);
+            
+        }
+        .back{
+            transform: rotateX(-180deg);
+            background-color:#019040;
+            color:#fff;
+        }
+        .parent:hover .front{
+            transform: rotateX(-180deg);
+        }
+        .parent:hover .back{
+            transform: rotateX(0deg);
+        }
+    </style>
 </head>
 
 <body>
-
-    <div class="slider-search">
-        <div class="w920">
-            <p class="clearfix ssbox">
-                <input type="text" class="ss-txt" id="txt_plac_key" placeholder="输入您想查找的内容" onkeydown="keydownEvent_f()">
-                <a href="javascript:void(0)" onclick="toftsersc()" class="ss-btn">
-                    <i></i>
-                </a>
-            </p>
-            <p class="clearfix ssxianlu">
-                <span class="sradio active" id="span_fline">线路</span>
-                <span class="sradio" id="span_fimg">图片</span>
-            </p>
-            <div class="box-sbtn clearfix">
-                <a class="btn btnclosess" href="javascript:void(0);">关闭</a>
-                <a class="btn " href="javascript:void(0);" onclick="toftsersc()">搜索</a>
-            </div>
-        </div>
-    </div>
 
     <div id="header">
         <div class="logo">
@@ -46,12 +51,12 @@
         <div class="pt-main-top">
             <div class="nav in_mid">
                 <div class="navS transix">
-                    <a href="index.html" class="z15 tran">首页</a>
-                    <a href="aboutus.html" class="z15 tran">走进拓创</a>
-                    <a href="product.html" class="z15 tran">重点产品</a>
-                    <a href="javascript:;" class="z15 tran">新闻中心</a>
-                    <a href="advertise.html" class="z15 tran">人力资源</a>
-                    <a href="contact.html" class="z15 tran">联系我们</a>
+                    <a href="index.htm" class="z15 tran">首页</a>
+                    <a href="aboutus.htm" class="z15 tran">走进拓创</a>
+                    <a href="product.htm" class="z15 tran">重点产品</a>
+                    <a href="news.htm" class="z15 tran">新闻中心</a>
+                    <a href="advertise.htm" class="z15 tran">人力资源</a>
+                    <a href="contact.htm" class="z15 tran">联系我们</a>
 
                 </div>
             </div>
@@ -80,9 +85,9 @@
             <div class="currentOption fr">
                 <div class="curOptionTopRight">
                     <span>您的当前位置：</span>
-                    <a href="index.html" class="tran">首页</a>
+                    <a href="index.htm" class="tran">首页</a>
                     <img src="./images/current_sj.png">
-                    <a href="aboutus.html" class="tran">走进拓创</a>
+                    <a href="aboutus.htm" class="tran">走进拓创</a>
                     <img src="./images/current_sj.png">
                 </div>
                 <p class="l_line"></p>
@@ -100,7 +105,7 @@
                     成都拓创医药有限公司创立于2011年，注册资本1000万元，是一家批发及销售一、二类医疗器械、化工产品（不含危险品）、消毒用品、生化药品、中药饮片、生物制品（不含预防性生物制品）、中成药、华学药制剂、抗生素制剂、预包装食品兼散装食品为一体的企业。
                 </div>
                 <p class="complay_line2"></p>
-                <div class="complay_list">
+                <!-- <div class="complay_list">
                     <ul>
                         <li>
                             <div class="mid_table">
@@ -129,7 +134,7 @@
 
                     </ul>
                     <div class="clear"></div>
-                </div>
+                </div> -->
                 <div class="complay_text complay_text2 z14" style="text-indent: 26px;margin-bottom: 40px;">
                     公司现在员工200人，大专及以上学历168人;国家GSP认证企业；2016年成都市金牛区纳税大户，被成都市食药监局评选为2016年度全市药品批发企业质量安全信用等级守信企业。公司现已与1900多家制药工业亲密合作，与四川省30余家二甲及以上公立医院建立长期稳定的战略合作关系，业务网络覆盖省内外私立医院、连锁药店、诊所等终端客户近万家，年销售额2亿元以上。
                 </div>
@@ -138,43 +143,63 @@
                 <p class="complay_line1"></p>
                 <div class="complay_list">
                     <ul>
-                        <li style="width:1120px;margin-bottom:10px;">
-                            <div class="mid_table">
+                        <li class="parent" style="width:1120px;margin-bottom:10px;">
+                            <div class="mid_table front">
                                 <div class="mid_cell">
                                     <h3 style="font-family: SimSun;margin-bottom: 20px;font-weight: bold;letter-spacing: 4px;">经营理念</h3>
-                                    <p class="complay_text z14">开拓创新、至诚至精</p>
+                                </div>
+                            </div>
+                            <div class="mid_table back">
+                                <div class="mid_cell">
+                                    <h3 style="font-family: SimSun;margin-bottom: 20px;font-weight: bold;letter-spacing: 4px;">开拓创新、至诚至精</h3>
                                 </div>
                             </div>
                         </li>
-                        <li style="width:1120px;margin-bottom:10px;">
-                            <div class="mid_table">
+                        <li class="parent" style="width:1120px;margin-bottom:10px;">
+                            <div class="mid_table front">
                                 <div class="mid_cell">
                                     <h3 style="font-family: SimSun;margin-bottom: 20px;font-weight: bold;letter-spacing: 4px;">核心价值观</h3>
-                                    <p class="complay_text z14">诚信、专注、创新、共赢</p>
+                                </div>
+                            </div>
+                            <div class="mid_table back">
+                                <div class="mid_cell">
+                                    <h3 style="font-family: SimSun;margin-bottom: 20px;font-weight: bold;letter-spacing: 4px;">诚信、专注、创新、共赢</h3>
                                 </div>
                             </div>
                         </li>
-                        <li style="width:1120px;margin-bottom:10px;">
-                            <div class="mid_table">
+                        <li class="parent" style="width:1120px;margin-bottom:10px;">
+                            <div class="mid_table front">
                                 <div class="mid_cell">
                                     <h3 style="font-family: SimSun;margin-bottom: 20px;font-weight: bold;letter-spacing: 4px;">经营方针</h3>
-                                    <p class="complay_text z14">质量第一,诚实经营</p>
+                                </div>
+                            </div>
+                            <div class="mid_table back">
+                                <div class="mid_cell">
+                                    <h3 style="font-family: SimSun;margin-bottom: 20px;font-weight: bold;letter-spacing: 4px;">质量第一,诚实经营</h3>
                                 </div>
                             </div>
                         </li>
-                        <li style="width:1120px;margin-bottom:10px;">
-                            <div class="mid_table">
+                        <li class="parent" style="width:1120px;margin-bottom:10px;">
+                            <div class="mid_table front">
                                 <div class="mid_cell">
                                     <h3 style="font-family: SimSun;margin-bottom: 20px;font-weight: bold;letter-spacing: 4px;">人才战略</h3>
-                                    <p class="complay_text z14">以人为本,人才兴企</p>
+                                </div>
+                            </div>
+                            <div class="mid_table back">
+                                <div class="mid_cell">
+                                    <h3 style="font-family: SimSun;margin-bottom: 20px;font-weight: bold;letter-spacing: 4px;">以人为本,人才兴企</h3>
                                 </div>
                             </div>
                         </li>
-                        <li style="width:1120px;margin-bottom:10px;">
-                            <div class="mid_table">
+                        <li class="parent" style="width:1120px;margin-bottom:10px;">
+                            <div class="mid_table front">
                                 <div class="mid_cell">
                                     <h3 style="font-family: SimSun;margin-bottom: 20px;font-weight: bold;letter-spacing: 4px;">公司愿景</h3>
-                                    <p class="complay_text z14">打造西南地区首屈一指的医药控销专业推广平台</p>
+                                </div>
+                            </div>
+                            <div class="mid_table back">
+                                <div class="mid_cell">
+                                    <h3 style="font-family: SimSun;margin-bottom: 20px;font-weight: bold;letter-spacing: 4px;">打造西南地区首屈一指的医药控销专业推广平台</h3>
                                 </div>
                             </div>
                         </li>
@@ -208,26 +233,26 @@
         </div>
     </div>
 
-    <div id="footer" class="section_big">
+    <div id="footer" class="section_big" style="height:355px;">
         <div class="footer_top">
             <div class="section">
                 <div class="footer_top_nav">
-                    <a href="index.html" class="z15 tran">首页
+                    <a href="index.htm" class="z15 tran">首页
                         <span class="footer_top_line"></span>
                     </a>
-                    <a href="aboutus.html" class="z15 tran">走进拓创
+                    <a href="aboutus.htm" class="z15 tran">走进拓创
                         <span class="footer_top_line"></span>
                     </a>
-                    <a href="product.html" class="z15 tran">重点产品
+                    <a href="product.htm" class="z15 tran">重点产品
                         <span class="footer_top_line"></span>
                     </a>
-                    <a href="javascript:;" class="z15 tran">新闻中心
+                    <a href="news.htm" class="z15 tran">新闻中心
                         <span class="footer_top_line"></span>
                     </a>
-                    <a href="advertise.html" class="z15 tran">人力资源
+                    <a href="advertise.htm" class="z15 tran">人力资源
                         <span class="footer_top_line"></span>
                     </a>
-                    <a href="contact.html" class="z15 tran">联系我们
+                    <a href="contact.htm" class="z15 tran">联系我们
                         <span class="footer_top_line"></span>
                     </a>
                 </div>
@@ -241,8 +266,8 @@
                     </h3>
                     <div class="footer_mid_lett">
                         <p class="z12 lett lett1">联系电话：028-85585982</p>
-                        <!-- <p class="z12 lett lett3">服务邮箱：xxxxxx.com</p> -->
-                        <!-- <p class="z12 lett lett2">业务咨询：139xxxxxxxx x经理</p> -->
+                        <!-- <p class="z12 lett lett3">服务邮箱：xxxxx@foxmail.com</p> -->
+                        <!-- <p class="z12 lett lett2">业务咨询：139xxxxxxxx X经理</p> -->
                         <p class="footer_mid_lett_line"></p>
                         <p class="z12 lett lett4">公司地址：四川省成都市青羊区腾飞大道229号2号楼3层</p>
                     </div>
@@ -252,17 +277,17 @@
                         <p class="title_dot4"></p>
                     </h3>
                     <div class="footer_mid_lett">
-                        <a href="javascript:;" class="z12 tran a1">电力营销</a>
-                        <a href="javascript:;" class="z12 tran a2">能源监测</a>
-                        <a href="javascript:;" class="z12 tran a3">智能运维</a>
-                        <a href="javascript:;" class="z12 tran a4">新增配电网的投资运营</a>
-                        <a href="javascript:;" class="z12 tran a5">客户产品推广</a>
-                        <a href="javascript:;" class="z12 tran a6">电力金融服务</a>
+                        <a href="http://www.dddddd.com/About/business?id=20#0" class="z12 tran a1">电力营销</a>
+                        <a href="http://www.dddddd.com/About/business?id=21#1" class="z12 tran a2">能源监测</a>
+                        <a href="http://www.dddddd.com/About/business?id=22#2" class="z12 tran a3">智能运维</a>
+                        <a href="http://www.dddddd.com/About/business?id=23#3" class="z12 tran a4">新增配电网的投资运营</a>
+                        <a href="http://www.dddddd.com/About/business?id=24#4" class="z12 tran a5">客户产品推广</a>
+                        <a href="http://www.dddddd.com/About/business?id=25#5" class="z12 tran a6">电力金融服务</a>
 
                     </div>
                 </div> -->
                 <div class="clear"></div>
-                <div class="footer_right" style="display: none;">
+                <div class="footer_right" style="display:none">
                     <a href="javascript:void(0)">
                         <img src="./images/footer_icon5.png" class="back_top">
                     </a>
@@ -272,7 +297,7 @@
         </div>
         <div class="footer_bot">
             <div class="section">
-                <span class="fl">成都拓创医药有限公司</span>
+                <span class="fl">成都拓创医药有限公司 Copyright (c) 2018 </span>
                 <span class="fr">Technical Support：
                     <a href="javascript:;" class="tran">sosoyy</a>
                 </span>
