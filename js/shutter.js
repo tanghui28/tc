@@ -37,49 +37,49 @@
     moveSwitch: function (randomNum, command, index) {
       switch (randomNum) {
         case 0:
-          this.gridWhole(index, 0);
+          this.gridWhole(index, 1);
         break;
         case 1:
           this.gridWhole(index, 1);
         break;
         case 2:
-          this.gridWhole(index, 2);
+          this.gridWhole(index, 1);
         break;
         case 3:
-          this.gridWhole(index, 3);
+          this.gridWhole(index, 1);
         break;
         case 4:
-          this.gridTop(index, 0);
+          this.gridWhole(index, 1);
         break;
         case 5:
-          this.gridTop(index, 1);
+          this.gridWhole(index, 1);
         break;
         case 6:
-          this.gridTop(index, 2);
+        this.gridWhole(index, 1);
         break;
         case 7:
-          this.gridLeft(index, 0);
+        this.gridWhole(index, 1);
         break;
         case 8:
-          this.gridLeft(index, 1);
+        this.gridWhole(index, 1);
         break;
         case 9:
-          this.gridLeft(index, 2);
+        this.gridWhole(index, 1);
         break;
         case 10:
-          this.gridOpacity(index);
+        this.gridWhole(index, 1);
         break;
         case 11:
-          this.gridAccordion(index);
+        this.gridWhole(index, 1);
         break;
         case 12:
-          this.gridLittle(index);
+        this.gridWhole(index, 1);
         break;
         case 13:
-          this.gridSwitch(index);
+        this.gridWhole(index, 1);
         break;
         default:
-          this.gridTop(index, 0);
+        this.gridWhole(index, 1);
         break;
       }
     },
@@ -117,8 +117,8 @@
       var random = function (min, max) {
         return Math.floor(Math.random() * (max + 1) - min);
       };
-
-      this.moveSwitch(random(0, 13), command, index);
+      var num=random(0, 13);
+      this.moveSwitch(num, command, index);
 
       this.shutterTitle = this.$shutterItem.eq(index).attr('data-shutter-title');
     },
